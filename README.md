@@ -1,3 +1,7 @@
+<div align="center">
+  <img src=".github/assets/banner.svg" alt="swittcs — Mechanical-keyboard sounds for every keystroke on Windows." width="100%">
+</div>
+
 # Swittcs
 
 Mechanical-keyboard sounds for every keystroke on Windows. A small .NET 8 tray app: pick a switch, set the volume, type.
