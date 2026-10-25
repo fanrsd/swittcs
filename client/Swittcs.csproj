@@ -1,0 +1,24 @@
+<Project Sdk="Microsoft.NET.Sdk">
+
+  <PropertyGroup>
+    <OutputType>WinExe</OutputType>
+    <TargetFramework>net8.0-windows</TargetFramework>
+    <UseWindowsForms>true</UseWindowsForms>
+    <Nullable>enable</Nullable>
+    <ImplicitUsings>enable</ImplicitUsings>
+    <ApplicationHighDpiMode>PerMonitorV2</ApplicationHighDpiMode>
+    <ApplicationIcon>app.ico</ApplicationIcon>
+  </PropertyGroup>
+
+  <ItemGroup>
+    <PackageReference Include="NAudio" Version="2.2.1" />
+  </ItemGroup>
+
+  <ItemGroup>
+    <!-- Switch profiles live in ../Assets/Sounds/<name>/. Embedded into Swittcs.dll (read through SoundBank) so installs don't ship loose audio files. -->
+    <EmbeddedResource Include="..\Assets\Sounds\**\*.wav" LogicalName="Sounds/%(RecursiveDir)%(Filename)%(Extension)" />
+    <Content Include="..\Assets\Sounds\THIRD_PARTY_NOTICES.txt" Link="THIRD_PARTY_NOTICES.txt" CopyToOutputDirectory="PreserveNewest" />
+    <EmbeddedResource Include="app.ico;app-off.ico" LogicalName="%(Filename)%(Extension)" />
+  </ItemGroup>
+
+</Project>
